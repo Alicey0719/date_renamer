@@ -5,13 +5,13 @@ import glob
 import sys
 import os
 
-def file_move(from_file_path, to_dir_path):
-    shutil.move(from_file_path, to_dir_path)
+def file_move(from_file_path, to_file_path):
+    shutil.move(from_file_path, to_file_path)
 
 def get_filedate(path):
     path = Path(path)
-    time = datetime.date.fromtimestamp(path.stat().st_mtime)
-    return time
+    date = datetime.date.fromtimestamp(path.stat().st_mtime)
+    return date
 
 def get_filelist(dir_path):
     l = glob.glob(dir_path+'[!*.py]')
